@@ -1,4 +1,4 @@
-# Telegra.ph API [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
+# Telegra.ph API [![Build Status](https://travis-ci.org/krrishd/telegraph-api.svg?branch=master)](https://travis-ci.org/krrishd/telegraph-api) [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
 An API endpoint that takes a [telegra.ph](http://telegra.ph) link and returns the data at that link as JSON.
 
