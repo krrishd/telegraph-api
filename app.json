@@ -1,0 +1,5 @@
+{
+  "name": "Telegra.ph API",
+  "description": "Takes any Telegra.ph link via POST request and returns all the data/content there.",
+  "repository": "https://github.com/krrishd/telegraph-api"
+}
