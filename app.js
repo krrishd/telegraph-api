@@ -28,5 +28,26 @@ app.post('/', (req, res) => {
 
 });
 
+app.post('/meta', (req, res) => {
+  if (!req.body.link) {
+    return res.status(400)
+      .json({
+        'error': 'Bad request.'
+      });
+  }
+
+  scraper(req.body.link, (error, result) => {
+    if (error) {
+      return res.status(400)
+        .json(error)
+    }
+    res.json({
+      title: result.title,
+      author: result.author,
+      dates: result.dates
+    });
+  });
+});
+
 app.listen(PORT);
 console.log(`Server listening on port ${PORT}`);
