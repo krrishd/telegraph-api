@@ -27,8 +27,8 @@ module.exports = (link, callback) => {
       published: $('meta[property="article:published_time"]').attr('content'),
       modified: $('meta[property="article:modified_time"]').attr('content')
     };
-    dates.formatted_published = (new Date(dates.published)).getMonth() + 
-      '/' + (new Date(dates.published)).getDay();
+    dates.formatted_published = ((new Date(dates.published)).getMonth() + 1) + 
+      '/' + (new Date(dates.published)).getDate();
 
     return callback(null, {
       title,
