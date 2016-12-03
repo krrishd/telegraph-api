@@ -6,7 +6,7 @@ let bodyParser = require('body-parser');
 let methodOverride = require('method-override');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
-app.use(express.methodOverride());
+app.use(methodOverride());
 
 // ## CORS middleware
 // 
