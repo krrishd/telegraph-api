@@ -5,6 +5,26 @@ let app = express();
 let bodyParser = require('body-parser');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
+app.use(express.methodOverride());
+
+// ## CORS middleware
+// 
+// see: http://stackoverflow.com/questions/7067966/how-to-allow-cors-in-express-nodejs
+var allowCrossDomain = function(req, res, next) {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
+    res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+      
+    // intercept OPTIONS method
+    if ('OPTIONS' == req.method) {
+      res.send(200);
+    }
+    else {
+      next();
+    }
+};
+
+app.use(allowCrossDomain);
 
 let PORT = process.env.PORT || 1337;
 
