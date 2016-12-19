@@ -22,7 +22,7 @@ module.exports = (link, callback) => {
     let $ = cheerio.load(body);
     let title = $('meta[property="og:title"]').attr('content');
     let author = $('meta[property="article:author"]').attr('content');
-    let content = $('#tl_editor').html().split('</address>')[1];
+    let content = $('#_tl_editor').html().split('</address>')[1];
     let dates = {
       published: $('meta[property="article:published_time"]').attr('content'),
       modified: $('meta[property="article:modified_time"]').attr('content')
